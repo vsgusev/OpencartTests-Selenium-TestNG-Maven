@@ -2,11 +2,9 @@
 <!DOCTYPE suite SYSTEM 'http://testng.org/testng-1.0.dtd'>
 <suite name="Тестовый" verbose="10" parallel="tests" thread-count="1">
 
-    <parameter name="rootUrl" value="http://opencart.nakoskin.ru"/>
-    <parameter name="browser" value="firefox"/>
-
-    <parameter name="adminLogin" value="admin"/>
-    <parameter name="adminPassword" value="GdfkvkrhjDH"/>
+    <parameter name="rootUrl" value=""/>
+    <parameter name="adminLogin" value=""/>
+    <parameter name="adminPassword" value=""/>
 
     <test name="Тест логина админом">
         <classes>
