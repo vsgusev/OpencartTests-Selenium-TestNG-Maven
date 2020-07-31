@@ -3,5 +3,5 @@
 Для запуска тестов:
 ```
 mvn clean install
-mvn test
+mvn test -Dtest=src/test/resources/suites/test.xml
 ```
