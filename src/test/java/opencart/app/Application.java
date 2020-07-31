@@ -16,15 +16,17 @@ public class Application {
     private RegistrationPage registrationPage;
     private AdminPanelLoginPage adminPanelLoginPage;
     private CustomerListPage customerListPage;
+    public String rootUrl;
 
-    public Application() {
+    public Application(String rootUrl) {
+        this.rootUrl = rootUrl;
 
         driver = new ChromeDriver();
         driver.manage().window().maximize();
 
-        registrationPage = new RegistrationPage(driver);
-        adminPanelLoginPage = new AdminPanelLoginPage(driver);
-        customerListPage = new CustomerListPage(driver);
+        registrationPage = new RegistrationPage(driver, rootUrl);
+        adminPanelLoginPage = new AdminPanelLoginPage(driver, rootUrl);
+        customerListPage = new CustomerListPage(driver, rootUrl);
     }
 
     public void quit() {
@@ -43,9 +45,9 @@ public class Application {
         registrationPage.continueButton.click();
     }
 
-    public Set<String> getCustomerEmails() {
+    public Set<String> getCustomerEmails(String login, String password) {
         if (adminPanelLoginPage.open().isOnThisPage()) {
-            adminPanelLoginPage.enterUsername("admin").enterPassword("password").submitLogin();
+            adminPanelLoginPage.enterUsername(login).enterPassword(password).submitLogin();
         }
 
         return customerListPage.open().getCustomerEmails();

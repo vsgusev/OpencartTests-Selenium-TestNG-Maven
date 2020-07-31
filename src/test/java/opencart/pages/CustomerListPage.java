@@ -13,8 +13,8 @@ import static java.util.stream.Collectors.toSet;
 
 public class CustomerListPage extends Page {
 
-    public CustomerListPage(WebDriver driver) {
-        super(driver);
+    public CustomerListPage(WebDriver driver, String rootUrl) {
+        super(driver, rootUrl);
         PageFactory.initElements(driver, this);
     }
 

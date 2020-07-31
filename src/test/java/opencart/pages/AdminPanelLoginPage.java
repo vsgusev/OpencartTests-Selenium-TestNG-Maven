@@ -6,12 +6,12 @@ import org.openqa.selenium.support.ui.ExpectedConditions;
 
 public class AdminPanelLoginPage extends Page {
 
-    public AdminPanelLoginPage(WebDriver driver) {
-        super(driver);
+    public AdminPanelLoginPage(WebDriver driver, String rootUrl) {
+        super(driver, rootUrl);
     }
 
     public AdminPanelLoginPage open() {
-        driver.get("http://localhost:8080/admin/index.php?route=common/login");
+        driver.get(this.rootUrl + "/admin/index.php?route=common/login");
         return this;
     }
 

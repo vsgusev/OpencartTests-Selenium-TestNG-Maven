@@ -7,8 +7,10 @@ public class Page {
 
     protected WebDriver driver;
     protected WebDriverWait wait;
+    public String rootUrl;
 
-    public Page(WebDriver driver) {
+    public Page(WebDriver driver, String rootUrl) {
+        this.rootUrl = rootUrl;
         this.driver = driver;
         wait = new WebDriverWait(driver, 10);
     }

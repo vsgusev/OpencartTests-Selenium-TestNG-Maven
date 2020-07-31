@@ -7,13 +7,13 @@ import org.openqa.selenium.support.PageFactory;
 
 public class RegistrationPage extends Page {
 
-    public RegistrationPage(WebDriver driver) {
-        super(driver);
+    public RegistrationPage(WebDriver driver, String rootUrl) {
+        super(driver, rootUrl);
         PageFactory.initElements(driver, this);
     }
 
     public void open() {
-        driver.get("http://localhost:8080/index.php?route=account/register");
+        driver.get(this.rootUrl + "/index.php?route=account/register");
     }
 
     @FindBy(name="firstname")
