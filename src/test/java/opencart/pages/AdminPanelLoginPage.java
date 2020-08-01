@@ -11,6 +11,7 @@ public class AdminPanelLoginPage extends Page {
     }
 
     public AdminPanelLoginPage open() {
+        // Благодаря переменной rootUrl в классе Page мы имеем доступ к этой переменой в любом классе наследнике через this.rootLink
         driver.get(this.rootUrl + "/admin/index.php?route=common/login");
         return this;
     }
